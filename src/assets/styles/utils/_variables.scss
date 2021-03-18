@@ -1,0 +1,29 @@
+// Generalvariables
+
+@mixin flex($direction, $verticalAlign, $horizontalAlign) {
+	display: flex;
+	flex-direction: $direction;
+	align-items: $verticalAlign;
+	justify-content: $horizontalAlign;
+}
+
+@mixin button($background){
+	border: none;
+	background-color: $background;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+@mixin pseudo($content, $position, $display){
+	content: $content;
+	position: $position;
+	display: $display;
+}
+
+@mixin font($family: false, $size:false, $weight: false, $color: false, $lheight: false){
+	@if $family	{ font-family: $family; }
+	@if $size	{ font-size: $size; }
+	@if $weight	{ font-weight: $weight; }
+	@if $color	{ color: $color; }
+	@if $lheight{ line-height: $lheight; }
+}

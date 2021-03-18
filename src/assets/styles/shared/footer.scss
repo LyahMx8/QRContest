@@ -1,0 +1,27 @@
+@import '../utils/variables';
+
+footer.main-footer {
+	max-width: 1280px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	@media(max-width:768px){
+		grid-template-columns: repeat(2,1fr);
+	}
+	.footer-element {
+		.title {
+			@include font(var(--title-font), 20px, false, var(--text), false);
+		}
+		ul {
+			li {
+				padding: 11px 0;
+				a {
+					font-size: 14px;
+					.title {
+						@include font(var(--title-font), 20px, false, var(--white), false);
+					}
+				}
+			}
+		}
+	}
+}

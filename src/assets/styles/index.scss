@@ -1,0 +1,82 @@
+@import './utils/fonts';
+@import './utils/colors';
+// General Styles
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+	font-family: var(--main-font);
+	font-weight: 400;
+	color: var(--dark);
+	font-size: 13px;
+	outline: none;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: geometricPrecision;
+	shape-rendering: geometricPrecision;
+	&:not(input):not(textarea):not(input.field) {
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-khtml-user-select: none;
+		-ms-user-select: none;   
+	}
+}
+
+input[type=text],
+input[type=number],
+input[type=search] {
+	-webkit-appearance: none;
+	-moz-appearance: textfield;
+	-webkit-border-radius:0px;
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		-moz-appearance: textfield;
+	}
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	min-width: 100%;
+	background: var(--white) !important;
+	position: relative;
+	touch-action: manipulation;
+}
+
+button, a {
+	cursor: pointer;
+}
+
+.desktop-only {
+	position: relative;
+	@media (max-width: 768px) {
+		overflow: hidden;
+		width: 0;
+		height: 0;
+		position: absolute;
+		opacity: 0;
+	}
+}
+
+.mobile-only {
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	position: absolute;
+	opacity: 0;
+	@media (max-width: 768px) {
+		overflow: initial;
+		width: initial;
+		height: initial;
+		position: initial;
+		opacity: 1;
+	}
+}
